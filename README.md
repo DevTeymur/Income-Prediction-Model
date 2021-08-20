@@ -1,11 +1,11 @@
+## Description
 This data was extracted from the 1994 Census bureau database by Ronny Kohavi and 
 Barry Becker (Data Mining and Visualization, Silicon Graphics). 
 A set of reasonably clean records was extracted using the following conditions: 
 ((AAGE>16) && (AGI>100) && (AFNLWGT>1) && (HRSWK>0)). The prediction task is to determine 
 whether a person makes over $50K a year.
 
--------------------------------------------------------------------------------------------
-Description of fnlwgt (final weight)
+### Description of fnlwgt (final weight)
 
 The weights on the Current Population Survey (CPS) files are controlled to 
 independent estimates of the civilian noninstitutional population of the US. 
@@ -26,13 +26,12 @@ characteristics should have similar weights. There is one important caveat to re
 about this statement. That is that since the CPS sample is actually a collection of 51 
 state samples, each with its own probability of selection, the statement only applies 
 within state.
--------------------------------------------------------------------------------------------
 
-Needed python libraries:
+### Needed python libraries:
 Pandas, matplotlib, ilterwarnings, missingno, numpy, sklearn, statsmodels, xgboost, imblearn.
 
-Process:
- In this process, some manipulations done in age, capital-gain and native-country columns.
+### Process:
+In this process, some manipulations done in age, capital-gain and native-country columns.
 All outliers were handled and dataset was balanced to same amount of each category in income column.
 After creating different models for data GradientBoostingClassifier with max_depth 7 and subsample=1
 was the most accurate with 0.9118.
